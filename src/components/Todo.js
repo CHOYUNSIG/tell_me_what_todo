@@ -35,7 +35,15 @@ export const Todo = ({
         <div className="todo">
             <div className="todo-header">Todos</div>
             <div className="todo-adder">
-                <input ref={inputRef} value={input} onChange={(event) => onInput(event.target.value)}></input>
+                <input
+                    ref={inputRef} 
+                    value={input} 
+                    onChange={(event) => onInput(event.target.value)}
+                    onKeyDown={(event) => {
+                        if (event.code.toLowerCase() === "enter")
+                            onClick();
+                    }}
+                />
                 <button onClick={() => onClick()}>+</button>
             </div>
             <div className="todo-main">{
