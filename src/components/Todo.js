@@ -40,7 +40,7 @@ export const Todo = ({
                     value={input} 
                     onChange={(event) => onInput(event.target.value)}
                     onKeyDown={(event) => {
-                        if (event.code.toLowerCase() === "enter")
+                        if (event.key.toLowerCase() === "enter")
                             onClick();
                     }}
                 />
